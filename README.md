@@ -1,4 +1,4 @@
-orbitJS
+miscJS
 =======
 
-Gravitational motion simulation with html elements, javascript, and numeric.js
+Miscellaneous Javascript
