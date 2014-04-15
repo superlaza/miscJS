@@ -15,11 +15,12 @@ jQuery(document).ready(function(){
 		if(this.innerHTML.split("<")[0].indexOf(theirName) != -1){
 			jQuery(".message",jQuery(this)).each(function(){
 				var words;
-				if(jQuery(".user",jQuery(".message_header",jQuery(this))).text().split(" ")[1]==theirName){
+				userName = jQuery(".user",jQuery(".message_header",jQuery(this))).text().split(" ")[1];
+				if(userName==theirName){
 					words = jQuery(this).siblings("p").text();
 					theirTotal+=words.split(' ').length;
 				}
-				if(jQuery(".user",jQuery(".message_header",jQuery(this))).text().split(" ")[1]==yourName){
+				if(userName==yourName){
 					words = $(this).siblings("p").text();
 					yourTotal+=words.split(' ').length;
 				}
