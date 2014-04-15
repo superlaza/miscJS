@@ -7,20 +7,20 @@ jQuery.noConflict();
 var theirTotal = 0;
 var yourTotal = 0;
 
-$(document).ready(function(){
-	//var yourName = $("h1","#rhs").text();
-	var yourName = "Perlaza"
-	var theirName = "Bird";
-	$(".thread").each(function(){
-		if(this.innerHTML.slice(0,20).split(" ")[1].slice(0,-1) == theirName){
-			$(".message",$(this)).each(function(){
+jQuery(document).ready(function(){
+	var yourName = "Bird"
+	var theirName = "Perlaza";
+	jQuery(".thread").each(function(){
+		// might want to change this to "this.text().indexOf(theirName) != -1
+		if(this.innerHTML.split("<")[0].indexOf(theirName) != -1){
+			jQuery(".message",jQuery(this)).each(function(){
 				var words;
-				if($(".user",$(".message_header",$(this))).text().split(" ")[1]==theirName){
-					words = $(this).siblings(".msgbody").text();
+				if(jQuery(".user",jQuery(".message_header",jQuery(this))).text().split(" ")[1]==theirName){
+					words = jQuery(this).siblings("p").text();
 					theirTotal+=words.split(' ').length;
 				}
-				if($(".user",$(".message_header",$(this))).text().split(" ")[1]==yourName){
-					words = $(this).siblings(".msgbody").text();
+				if(jQuery(".user",jQuery(".message_header",jQuery(this))).text().split(" ")[1]==yourName){
+					words = $(this).siblings("p").text();
 					yourTotal+=words.split(' ').length;
 				}
 			});
