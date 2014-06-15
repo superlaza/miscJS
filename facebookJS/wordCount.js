@@ -27,7 +27,7 @@ var yourTotal = 0;
 		// might want to change this to "this.text().indexOf(theirName) != -1
 		if(this.innerHTML.split("<")[0].indexOf(theirName) != -1){
 			results = jQuery(".message",jQuery(this));
-			for(var i=0; i<10; ++i){
+			for(var i=0; i<results.length; ++i){
 				var words;
 				var split;
 				userName = jQuery(".user",jQuery(".message_header",jQuery(results[i]))).text().split(" ")[1];
