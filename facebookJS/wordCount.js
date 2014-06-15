@@ -27,6 +27,7 @@ jQuery(document).ready(function(){
 		if(this.innerHTML.split("<")[0].indexOf(theirName) != -1){
 			jQuery(".message",jQuery(this)).each(function(){
 				var words;
+				var split;
 				userName = jQuery(".user",jQuery(".message_header",jQuery(this))).text().split(" ")[1];
 				words = jQuery(this).siblings("p").text();
 				split = words.split(' ').length;
