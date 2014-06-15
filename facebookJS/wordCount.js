@@ -21,19 +21,20 @@ var yourTotal = 0;
 jQuery(document).ready(function(){
 	var yourName = "Bird";
 	var theirName = "Perlaza";
-	jQuery(".thread").each(function(){
+	//just run through the first thread
+	jQuery([jQuery(".thread")[0]]).each(function(){
 		// might want to change this to "this.text().indexOf(theirName) != -1
 		if(this.innerHTML.split("<")[0].indexOf(theirName) != -1){
 			jQuery(".message",jQuery(this)).each(function(){
 				var words;
 				userName = jQuery(".user",jQuery(".message_header",jQuery(this))).text().split(" ")[1];
+				words = jQuery(this).siblings("p").text();
+				split = words.split(' ').length;
 				if(userName==theirName){
-					words = jQuery(this).siblings("p").text();
-					theirTotal+=words.split(' ').length;
+					theirTotal+=split;
 				}
 				if(userName==yourName){
-					words = $(this).siblings("p").text();
-					yourTotal+=words.split(' ').length;
+					yourTotal+=split;
 				}
 			});
 			//break loop
