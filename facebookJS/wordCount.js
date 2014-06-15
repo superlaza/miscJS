@@ -32,7 +32,6 @@ var yourTotal = 0;
 				var split;
 				userName = jQuery(".user",jQuery(".message_header",jQuery(results[i]))).text().split(" ")[1];
 				words = jQuery(results[i]).next("p").text();//get the p element immediately following the message div
-				console.log(results[i]);
 				split = words.split(' ').length;
 				if(userName==theirName){
 					theirTotal+=split;
