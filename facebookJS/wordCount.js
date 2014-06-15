@@ -19,7 +19,7 @@ var theirTotal = 0;
 var yourTotal = 0;
 
 jQuery(document).ready(function(){
-	var yourName = "Bird"
+	var yourName = "Bird";
 	var theirName = "Perlaza";
 	jQuery(".thread").each(function(){
 		// might want to change this to "this.text().indexOf(theirName) != -1
