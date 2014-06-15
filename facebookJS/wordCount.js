@@ -18,18 +18,21 @@ function oc(a)
 var theirTotal = 0;
 var yourTotal = 0;
 
-jQuery(document).ready(function(){
+//jQuery(document).ready(function(){
+
 	var yourName = "Bird";
 	var theirName = "Perlaza";
 	//just run through the first thread
 	jQuery([jQuery(".thread")[0]]).each(function(){
 		// might want to change this to "this.text().indexOf(theirName) != -1
 		if(this.innerHTML.split("<")[0].indexOf(theirName) != -1){
-			jQuery(".message",jQuery(this)).each(function(){
+			results = jQuery(".message",jQuery(this));
+			for(var i=0; i<10; ++i){
 				var words;
 				var split;
-				userName = jQuery(".user",jQuery(".message_header",jQuery(this))).text().split(" ")[1];
-				words = jQuery(this).siblings("p").text();
+				userName = jQuery(".user",jQuery(".message_header",jQuery(results[i]))).text().split(" ")[1];
+				words = jQuery(results[i]).next("p").text();//get the p element immediately following the message div
+				console.log(results[i]);
 				split = words.split(' ').length;
 				if(userName==theirName){
 					theirTotal+=split;
@@ -37,10 +40,11 @@ jQuery(document).ready(function(){
 				if(userName==yourName){
 					yourTotal+=split;
 				}
-			});
+			}
 			//break loop
 			return false;
 		}
 	});
 	alert(yourName+": "+yourTotal+"\n"+theirName+": "+theirTotal);
-});
+
+//});
