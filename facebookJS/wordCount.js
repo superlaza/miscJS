@@ -4,17 +4,6 @@ document.getElementsByTagName('head')[0].appendChild(jq);
 // ... give time for script to load, then type.
 jQuery.noConflict();
 
-//utility function
-function oc(a)
-{
-  var o = {};
-  for(var i=0;i<a.length;i++)
-  {
-    o[a[i]]='';
-  }
-  return o;
-}
-
 var theirTotal = 0;
 var yourTotal = 0;
 
